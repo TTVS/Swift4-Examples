@@ -10,6 +10,8 @@ import UIKit
 
 struct Constants {
     
+    // COLORS
+    
     // flat australian colors
     static let color_flat_aussie_yellow = UIColor.rgba(246, 229, 141,1.0)
     static let color_flat_aussie_orange = UIColor.rgba(255, 190, 118,1.0)
