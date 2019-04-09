@@ -12,6 +12,16 @@ struct Constants {
     
     // COLORS
     
+    static let color_red = UIColor.rgba(255, 59, 48, 1)
+    static let color_orange = UIColor.rgba(255, 149, 0, 1)
+    static let color_yellow = UIColor.rgba(255, 204, 0, 1)
+    static let color_green = UIColor.rgba(76, 217, 100, 1)
+    static let color_teal_blue = UIColor.rgba(90, 200, 250, 1)
+    static let color_blue = UIColor.rgba(0, 122, 255, 1)
+    static let color_purple = UIColor.rgba(88, 86, 214, 1)
+    static let color_pink = UIColor.rgba(255, 45, 85, 1)
+    
+    
     // flat australian colors
     static let color_flat_aussie_yellow = UIColor.rgba(246, 229, 141,1.0)
     static let color_flat_aussie_orange = UIColor.rgba(255, 190, 118,1.0)
@@ -45,5 +55,5 @@ struct Constants {
     static let color_flat_v1_pomegranate = UIColor.rgba(192, 57, 43,1.0)
     static let color_flat_v1_silver = UIColor.rgba(189, 195, 199,1.0)
     static let color_flat_v1_asbestos = UIColor.rgba(127, 140, 141,1.0)
-    
+
 }
