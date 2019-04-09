@@ -55,5 +55,17 @@ struct Constants {
     static let color_flat_v1_pomegranate = UIColor.rgba(192, 57, 43,1.0)
     static let color_flat_v1_silver = UIColor.rgba(189, 195, 199,1.0)
     static let color_flat_v1_asbestos = UIColor.rgba(127, 140, 141,1.0)
-
+    
+    
+    // SIZE
+    
+    // buttons size
+    static let size_icon = 25
+    static let size_icon_recommended = 44
+    
+    // text font
+    static let font_size_big = 18
+    static let font_size_medium = 14
+    static let font_size_small = 12
+    
 }
