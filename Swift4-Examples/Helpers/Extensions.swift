@@ -91,3 +91,46 @@ extension URL {
         }
     }
 }
+
+
+// MARK: - Cache images object
+let imageCache = NSCache<AnyObject, AnyObject>()
+
+extension UIImageView {
+    
+    // MARK: Cache images and load from cache using url string
+    func loadImageUsingCacheWithUrlString(urlString: String) {
+        guard let url = URL(string: urlString) else { return }
+        
+        self.image = nil
+        
+        // check if image exist in cache before requesting
+        if let cachedImage = imageCache.object(forKey: urlString as AnyObject) as? UIImage {
+            self.image = cachedImage
+            return
+        }
+        
+        // otherwise fire off a new download
+        URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
+            
+            if error != nil {
+                print(error as Any)
+                return
+            }
+            
+            DispatchQueue.main.async {
+                
+                if data == nil {
+                    print("imageData is nil")
+                    return
+                }
+                
+                if let downloadedImage = UIImage(data: data!) {
+                    imageCache.setObject(downloadedImage, forKey: urlString as AnyObject)
+                    self.image = downloadedImage
+                }
+            }
+            
+        }).resume()
+    }
+}
