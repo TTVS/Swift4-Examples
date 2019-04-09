@@ -73,10 +73,11 @@ extension URL {
     
     
     // MARK: - Video Compression
-    func compressVideoWithUrl(inputUrl: URL, outputUrl: URL, handler:@escaping (_ exportSession: AVAssetExportSession?)-> Void) {
+    // eg. AVAssetExportPresetLowQuality
+    func compressVideoWithUrl(inputUrl: URL, outputUrl: URL, compressionQuality: String, handler:@escaping (_ exportSession: AVAssetExportSession?)-> Void) {
         let urlAsset = AVURLAsset(url: inputUrl, options: nil)
         
-        guard let exportSession = AVAssetExportSession(asset: urlAsset, presetName: Constants.videoCompressionQuality) else {
+        guard let exportSession = AVAssetExportSession(asset: urlAsset, presetName: compressionQuality) else {
             
             handler(nil)
             return
